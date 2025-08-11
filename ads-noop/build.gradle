@@ -40,7 +40,9 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from components.release
+                // 直接使用AAR文件
+                artifact bundleReleaseAar
+                
                 groupId = project.GROUP
                 artifactId = 'ads-noop'
                 version = project.VERSION_NAME
