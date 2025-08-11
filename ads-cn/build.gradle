@@ -37,36 +37,38 @@ dependencies {
 group = project.GROUP
 version = project.VERSION_NAME
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            from components.release
-            groupId = project.GROUP
-            artifactId = 'ads-cn'
-            version = project.VERSION_NAME
-            
-            pom {
-                name = 'Ads CN'
-                description = '国内广告SDK模块'
-                url = project.POM_URL
-                licenses {
-                    license {
-                        name = project.POM_LICENCE_NAME
-                        url = project.POM_LICENCE_URL
-                        distribution = project.POM_LICENCE_DIST
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = project.GROUP
+                artifactId = 'ads-cn'
+                version = project.VERSION_NAME
+                
+                pom {
+                    name = 'Ads CN'
+                    description = '国内广告SDK模块'
+                    url = project.POM_URL
+                    licenses {
+                        license {
+                            name = project.POM_LICENCE_NAME
+                            url = project.POM_LICENCE_URL
+                            distribution = project.POM_LICENCE_DIST
+                        }
                     }
-                }
-                developers {
-                    developer {
-                        id = project.POM_DEVELOPER_ID
-                        name = project.POM_DEVELOPER_NAME
-                        email = project.POM_DEVELOPER_EMAIL
+                    developers {
+                        developer {
+                            id = project.POM_DEVELOPER_ID
+                            name = project.POM_DEVELOPER_NAME
+                            email = project.POM_DEVELOPER_EMAIL
+                        }
                     }
-                }
-                scm {
-                    connection = project.POM_SCM_CONNECTION
-                    developerConnection = project.POM_SCM_DEV_CONNECTION
-                    url = project.POM_SCM_URL
+                    scm {
+                        connection = project.POM_SCM_CONNECTION
+                        developerConnection = project.POM_SCM_DEV_CONNECTION
+                        url = project.POM_SCM_URL
+                    }
                 }
             }
         }

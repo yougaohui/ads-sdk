@@ -30,43 +30,45 @@ dependencies {
     api project(":ads-core")
     
     // 全球广告SDK依赖
-    // 这里可以添加Google AdMob等全球广告SDK依赖
+    // 这里可以添加具体的广告SDK依赖
 }
 
 // Maven发布配置
 group = project.GROUP
 version = project.VERSION_NAME
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            from components.release
-            groupId = project.GROUP
-            artifactId = 'ads-global'
-            version = project.VERSION_NAME
-            
-            pom {
-                name = 'Ads Global'
-                description = '全球广告SDK模块'
-                url = project.POM_URL
-                licenses {
-                    license {
-                        name = project.POM_LICENCE_NAME
-                        url = project.POM_LICENCE_URL
-                        distribution = project.POM_LICENCE_DIST
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = project.GROUP
+                artifactId = 'ads-global'
+                version = project.VERSION_NAME
+                
+                pom {
+                    name = 'Ads Global'
+                    description = '全球广告SDK模块'
+                    url = project.POM_URL
+                    licenses {
+                        license {
+                            name = project.POM_LICENCE_NAME
+                            url = project.POM_LICENCE_URL
+                            distribution = project.POM_LICENCE_DIST
+                        }
                     }
-                }
-                developers {
-                    developer {
-                        id = project.POM_DEVELOPER_ID
-                        name = project.POM_DEVELOPER_NAME
-                        email = project.POM_DEVELOPER_EMAIL
+                    developers {
+                        developer {
+                            id = project.POM_DEVELOPER_ID
+                            name = project.POM_DEVELOPER_NAME
+                            email = project.POM_DEVELOPER_EMAIL
+                        }
                     }
-                }
-                scm {
-                    connection = project.POM_SCM_CONNECTION
-                    developerConnection = project.POM_SCM_DEV_CONNECTION
-                    url = project.POM_SCM_URL
+                    scm {
+                        connection = project.POM_SCM_CONNECTION
+                        developerConnection = project.POM_SCM_DEV_CONNECTION
+                        url = project.POM_SCM_URL
+                    }
                 }
             }
         }
