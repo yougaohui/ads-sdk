@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 占位：国内广告SDK应用ID、位点ID，具体值请在各口味的 res/values 覆盖 -->
+    <string name="ads_app_id_cn">your_mediatom_app_id</string>
+
+    <!-- 开屏、插屏、信息流占位（各口味覆盖具体ID） -->
+    <string name="ads_splash_placement_cn">splash_placement_id</string>
+    <string name="ads_interstitial_placement_cn">inter_placement_id</string>
+    <string name="ads_feed_home_placement_cn">feed_home_placement_id</string>
+    <string name="ads_feed_mine_placement_cn">feed_mine_placement_id</string>
+
+    <!-- 奖励视频保留占位（如需要） -->
+    <string name="ads_reward_placement_cn">reward_placement_id</string>
+
+    <!-- 初始化参数占位（可在口味覆盖） -->
+    <string name="ads_app_channel_cn">official</string>
+    <bool name="ads_debug_cn">false</bool>
+</resources>

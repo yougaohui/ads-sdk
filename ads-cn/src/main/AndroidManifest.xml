@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="xfkj.ads.cn"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk tools:overrideLibrary="com.bun.miitmdid" />
+
+    <application>
+        <!-- Mediatom AppId 占位 -->
+        <meta-data
+            android:name="mediatom_app_id"
+            android:value="@string/ads_app_id_cn" />
+
+        <!-- 若SDK要求单独的开屏Activity，可在此添加；当前通过API在容器里展示，无需新增 -->
+        <!-- <activity android:name="com.xxx.sdk.SplashActivity"
+                  android:exported="false" /> -->
+    </application>
+</manifest>

@@ -1,0 +1,21 @@
+[33mcommit cd5bb7000ebd400b7b36d60b3159188b3cfab098[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;33mtag: v1.0.0[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: “yougaohui” <823891229@qq.com>
+Date:   Mon Aug 11 10:57:56 2025 +0800
+
+    Initial commit: Android广告SDK项目
+
+.github/workflows/publish.yml
+.idea/ads-sdk.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+README.md
+ads-cn/build.gradle
+ads-core/build.gradle
+ads-global/build.gradle
+ads-noop/build.gradle
+build.gradle
+gradle.properties
+scripts/publish.bat
+scripts/publish.sh
+settings.gradle
