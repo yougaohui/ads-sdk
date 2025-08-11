@@ -6,7 +6,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.1.0'
-        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.25.3'
+        // 移除不兼容的插件
+        // classpath 'com.vanniktech:gradle-maven-publish-plugin:0.25.3'
     }
 }
 
