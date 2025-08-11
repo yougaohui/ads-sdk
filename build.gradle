@@ -14,8 +14,12 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 }
+
+// 应用 maven-publish 插件到根项目
+apply plugin: 'maven-publish'
 
 task clean(type: Delete) {
     delete rootProject.buildDir

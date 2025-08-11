@@ -6,13 +6,8 @@ pluginManagement {
     }
 }
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+// 移除 dependencyResolutionManagement 以兼容较旧的 Gradle 版本
+// 直接在根项目中配置仓库
 
 rootProject.name = "ads-sdk"
 include ':ads-core'

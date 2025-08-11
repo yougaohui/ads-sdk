@@ -26,6 +26,36 @@
 ### ads-noop
 无广告模块，提供空实现，用于不需要广告的应用。
 
+## 构建和开发
+
+### 环境要求
+- JDK 8 或更高版本
+- Android Gradle Plugin 8.1.0+
+- Gradle 8.0+
+
+### 本地构建
+1. 克隆项目到本地
+2. 使用 Gradle Wrapper 构建：
+   ```bash
+   # Linux/macOS
+   ./gradlew clean build
+   
+   # Windows
+   gradlew.bat clean build
+   ```
+
+3. 发布到本地Maven仓库：
+   ```bash
+   # Linux/macOS
+   ./gradlew publishToMavenLocal
+   
+   # Windows
+   gradlew.bat publishToMavenLocal
+   ```
+
+### 快速测试构建
+Windows 用户可以直接运行 `build-test.bat` 脚本来测试完整构建流程。
+
 ## 安装
 
 ### 方式1: GitHub Packages (推荐)
@@ -98,6 +128,35 @@ dependencies {
 - ✅ **版本管理**: 支持标签、分支、提交等多种版本引用
 - ✅ **全球CDN**: 快速下载，全球可用
 - ✅ **免费使用**: 开源项目完全免费
+
+## 故障排除
+
+### 常见构建错误
+
+#### 1. dependencyResolutionManagement 方法找不到
+**错误信息**: `Could not find method dependencyResolutionManagement()`
+
+**解决方案**: 
+- 确保使用 Gradle 7.0+ 版本
+- 或者移除 `settings.gradle` 中的 `dependencyResolutionManagement` 配置（已自动修复）
+
+#### 2. maven-publish 插件未找到
+**错误信息**: `Gradle 'publishToMavenLocal' task not found`
+
+**解决方案**: 
+- 确保在根项目的 `build.gradle` 中应用了 `maven-publish` 插件
+- 检查子项目是否正确配置了发布任务
+
+#### 3. Gradle 版本兼容性问题
+**解决方案**: 
+- 使用项目提供的 Gradle Wrapper：`./gradlew` 或 `gradlew.bat`
+- 确保 JDK 版本兼容（推荐 JDK 8 或更高）
+
+### 获取帮助
+如果遇到其他问题，请：
+1. 检查 [Issues](https://github.com/yougaohui/ads-sdk/issues) 页面
+2. 提交新的 Issue 并附上详细的错误信息
+3. 确保包含操作系统、JDK版本、Gradle版本等信息
 
 ## 使用方法
 
