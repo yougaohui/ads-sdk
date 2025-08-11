@@ -1,5 +1,7 @@
 # Android 广告SDK
 
+[![JitPack](https://jitpack.io/v/yougaohui/ads-sdk.svg)](https://jitpack.io/#yougaohui/ads-sdk)
+
 一个支持国内和全球广告平台的Android广告SDK，提供统一的广告接口和灵活的模块化架构。
 
 ## 特性
@@ -35,7 +37,7 @@ dependencyResolutionManagement {
     repositories {
         // ... 其他仓库
         maven {
-            url = uri("https://maven.pkg.github.com/YOUR_USERNAME/ads-sdk")
+            url = uri("https://maven.pkg.github.com/yougaohui/ads-sdk")
             credentials {
                 username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
                 password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
@@ -50,35 +52,52 @@ dependencyResolutionManagement {
 ```gradle
 dependencies {
     // 核心模块
-    implementation 'com.github.yourusername:ads-core:1.0.0'
+    implementation 'com.github.yougaohui:ads-core:1.0.0'
     
     // 按需选择广告模块
-    implementation 'com.github.yourusername:ads-cn:1.0.0'      // 国内广告
-    implementation 'com.github.yourusername:ads-global:1.0.0'  // 全球广告
-    implementation 'com.github.yourusername:ads-noop:1.0.0'    // 无广告
+    implementation 'com.github.yougaohui:ads-cn:1.0.0'      // 国内广告
+    implementation 'com.github.yougaohui:ads-global:1.0.0'  // 全球广告
+    implementation 'com.github.yougaohui:ads-noop:1.0.0'    // 无广告
 }
 ```
 
-### 方式2: JitPack
+### 方式2: JitPack (推荐)
 
-在项目根目录的 `build.gradle` 中添加：
+JitPack可以直接从GitHub仓库构建您的库，无需额外配置。
+
+#### 在项目根目录的 `settings.gradle` 中添加：
 
 ```gradle
-allprojects {
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        // ... 其他仓库
+        google()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
     }
 }
 ```
 
-在 `build.gradle` 中添加依赖：
+#### 在 `build.gradle` 中添加依赖：
 
 ```gradle
 dependencies {
-    implementation 'com.github.yourusername:ads-sdk:1.0.0'
+    // 使用GitHub标签版本
+    implementation 'com.github.yougaohui:ads-sdk:1.0.2'
+    
+    // 或者使用分支版本
+    // implementation 'com.github.yougaohui:ads-sdk:main-SNAPSHOT'
+    
+    // 或者使用特定提交
+    // implementation 'com.github.yougaohui:ads-sdk:commit-hash'
 }
 ```
+
+#### JitPack优势：
+- ✅ **自动构建**: 无需手动发布，Git标签自动触发构建
+- ✅ **版本管理**: 支持标签、分支、提交等多种版本引用
+- ✅ **全球CDN**: 快速下载，全球可用
+- ✅ **免费使用**: 开源项目完全免费
 
 ## 使用方法
 
@@ -161,19 +180,49 @@ dependencies {
 
 ## 发布新版本
 
-1. 更新版本号：
+### 方式1: JitPack (推荐)
+
+JitPack发布非常简单，只需要：
+
+1. **创建Git标签**：
+   ```bash
+   git tag v1.0.3
+   git push origin v1.0.3
+   ```
+
+2. **自动构建**: JitPack会自动检测标签并构建库
+3. **立即可用**: 构建完成后，其他项目即可使用新版本
+
+### 方式2: GitHub Packages
+
+1. **更新版本号**：
    ```bash
    # 在gradle.properties中修改VERSION_NAME
-   VERSION_NAME=1.0.1
+   VERSION_NAME=1.0.3
    ```
 
-2. 创建Git标签：
+2. **创建Git标签**：
    ```bash
-   git tag v1.0.1
-   git push origin v1.0.1
+   git tag v1.0.3
+   git push origin v1.0.3
    ```
 
-3. GitHub Actions会自动构建并发布到GitHub Packages
+3. **GitHub Actions会自动构建并发布到GitHub Packages**
+
+### 版本引用方式
+
+```gradle
+dependencies {
+    // 使用最新标签版本
+    implementation 'com.github.yougaohui:ads-sdk:1.0.2'
+    
+    // 使用分支最新版本
+    implementation 'com.github.yougaohui:ads-sdk:main-SNAPSHOT'
+    
+    // 使用特定提交
+    implementation 'com.github.yougaohui:ads-sdk:7eba3d6'
+}
+```
 
 ## 许可证
 
@@ -186,4 +235,4 @@ Apache License 2.0
 ## 联系方式
 
 - 邮箱: your.email@example.com
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@yougaohui](https://github.com/yougaohui)
