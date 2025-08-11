@@ -1,12 +1,6 @@
 jdk:
   - openjdk17
 
-before_install:
-  - ./gradlew wrapper --gradle-version 8.0
-
 install:
   - ./gradlew clean
   - ./gradlew build
-
-before_script:
-  - ./gradlew publishToMavenLocal
